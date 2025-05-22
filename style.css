@@ -1,0 +1,696 @@
+/* style.css */
+
+/*
+Paleta de Cores SAMU (conforme fornecido)
+Vermelho: PANTONE 186 | HEX #C8102E | RGB (200, 16, 46)
+Laranja: PANTONE 717 | HEX #E87722 | RGB (232, 119, 34)
+Branco: PANTONE White | HEX #FFFFFF | RGB (255, 255, 255)
+Azul: PANTONE 286 | HEX #0033A0 | RGB (0, 51, 160)
+
+Predominantes: Branco e Azul
+Detalhes: Vermelho e Laranja
+*/
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif; /* Fonte principal para o corpo do texto */
+    background-color: #FFFFFF; /* Fundo branco predominante */
+    color: #333; /* Cor de texto padrão, um cinza escuro para legibilidade */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+}
+
+/* Container centraliza o conteúdo */
+.container {
+    max-width: 1000px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 20px; /* Espaçamento interno nas laterais */
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-image: url('images/seamless pattern.png'); /* Imagem de fundo */
+    background-repeat: repeat-x; /* Repete horizontalmente */
+    background-size: auto 100%; /* Ajusta a altura automaticamente */
+    background-color: rgba(0, 9, 44, 0.918); /* Fundo semi-transparente (50% de opacidade) */
+    background-blend-mode: multiply; /* Mistura a imagem com a cor de fundo */
+    color: #FFFFFF; /* Texto branco */
+    padding: 25px 0; /* Espaçamento superior e inferior */
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content img {
+    max-height: 90px; /* Tamanho da logo */
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive; /* Fonte especial para o título principal */
+    font-size: 3.2em; /* Tamanho do título */
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra suave no texto */
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.95; /* Leve transparência */
+    font-weight: 500; /* Peso da fonte */
+}
+
+/* Estilos da Navegação - Desktop First */
+nav {
+    background-color: #EBF3FF; /* Um azul bem claro para a navegação */
+    display: flex; /* Flexbox para alinhar links */
+    justify-content: center; /* Centraliza os links */
+    gap: 35px; /* Espaçamento entre os links */
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #0033A0; /* Linha sutil azul abaixo da navegação */
+    position: relative; /* Necessário para posicionar o botão hambúrguer em mobile */
+}
+
+/* Esconde o botão hambúrguer em desktop */
+nav .hamburger {
+    display: none;
+}
+
+/* Estilo para os links da navegação em desktop */
+nav .nav-links {
+    display: flex; /* Mantém os links em linha no desktop */
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap; /* Permite que os links quebrem linha em caso de muitos itens */
+    width: 100%; /* Ocupa toda a largura disponível no desktop */
+}
+
+nav a {
+    color: #0033A0; /* Azul do SAMU para os links */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #C8102E; /* Vermelho no hover */
+    color: #FFFFFF; /* Texto branco no hover */
+    transform: translateY(-2px); /* Pequeno efeito de levantar */
+}
+
+nav a.active {
+    background-color: #E87722; /* Laranja do SAMU para destacar o link ativo */
+    color: #FFFFFF; /* Texto branco para contraste */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos das Seções Gerais */
+section {
+    background-color: #FFFFFF; /* Fundo branco para as seções */
+    margin-bottom: 30px; /* Espaçamento entre seções */
+    border-radius: 15px; /* Bordas mais suaves */
+    padding: 40px; /* Espaçamento interno */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    border-left: 6px solid #0033A0; /* Barra lateral azul para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Leve levantamento no hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada no hover */
+}
+
+section h2 {
+    color: #0033A0; /* Título da seção em azul */
+    font-size: 2.5em; /* Tamanho do título da seção */
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 4px solid #E87722; /* Sublinhado laranja */
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+section h3 {
+    color: #0033A0; /* Azul para subtítulos */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+section p {
+    font-size: 1.1em;
+    color: #444; /* Cor de texto padrão, um cinza escuro para legibilidade */
+    margin-bottom: 10px;
+}
+
+/* Estilos para listas */
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.05em;
+    color: #555;
+}
+
+ul li::before {
+    content: '🚑';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #E87722;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Estilos do Botão Call to Action (CTA) */
+.cta-button {
+    display: inline-flex;
+    background-color: #C8102E;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button:hover {
+    background-color: #E87722;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.cta-button .icon {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+/* Estilos da Seção Hero (Banner principal) */
+.hero-section {
+    background-image: url('images/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para layout de texto e imagem */
+.content-with-image {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.content-with-image.reverse-order {
+    flex-direction: row-reverse;
+}
+
+.section-image {
+    width: 45%;
+    flex-shrink: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid #EBF3FF;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.text-content {
+    flex-grow: 1;
+    padding: 10px 0;
+}
+
+/* Estilos para a grade de impacto */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.impact-item {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-bottom: 5px solid #C8102E;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.impact-item .icon {
+    font-size: 3em;
+    color: #E87722;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.impact-item h3 {
+    color: #0033A0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.impact-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Estilos para a grade de pontos de coleta */
+.points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.point-item {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #0033A0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.point-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.point-item h3 {
+    font-size: 1.6em;
+    color: #0033A0;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.point-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+.point-item p .icon {
+    color: #E87722;
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 40px;
+}
+
+.sub-heading {
+    font-size: 2em;
+    color: #0033A0;
+    margin-bottom: 25px;
+    margin-top: 50px;
+    font-weight: 600;
+}
+
+/* Estilos da Galeria */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 3px solid #0033A0;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.03);
+    border-color: #C8102E;
+}
+
+/* Estilos do Mapa (Iframe) */
+.map-frame {
+    width: 100%;
+    height: 450px;
+    border: 4px solid #EBF3FF;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+/* Estilos da Caixa de Testemunho (História de Impacto) */
+.testimonial-box {
+    background-color: #EBF3FF;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+    border-left: 6px solid #0033A0;
+}
+
+.testimonial-box p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-box .author {
+    text-align: right;
+    font-weight: bold;
+    color: #0033A0;
+    font-style: normal;
+    margin-top: 20px;
+}
+
+/* Estilos do Rodapé */
+footer {
+    background-color: #0033A0;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    border-top: 5px solid #E87722;
+    font-size: 0.95em;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #C8102E;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+footer a:hover {
+    color: #E87722;
+    text-decoration: underline;
+}
+
+/* ==================================================================== */
+/* RESPONSIVIDADE (MEDIA QUERIES) - Melhorias Mobile com Hambúrguer   */
+/* ==================================================================== */
+
+/* Ajustes gerais para telas menores que 900px */
+@media (max-width: 900px) {
+    .container {
+        padding: 0 15px;
+    }
+    section {
+        padding: 30px 20px; /* Reduz um pouco mais o padding lateral das seções */
+    }
+    .hero-section h2 {
+        font-size: 3em; /* Ajuste para caber melhor */
+    }
+    .hero-section p {
+        font-size: 1.1em;
+    }
+    .content-with-image {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .content-with-image.reverse-order {
+        flex-direction: column;
+    }
+    .section-image {
+        width: 90%; /* Aumenta a largura da imagem */
+        max-width: 450px; /* Limita a largura máxima da imagem */
+        margin: 0 auto;
+    }
+    .text-content {
+        padding: 0;
+    }
+    .impact-grid, .points-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas médias */
+    }
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Imagens menores para caber mais */
+    }
+    .galeria img {
+        height: 140px; /* Altura ajustada */
+    }
+}
+
+/* Ajustes para telas menores que 768px (ONDE O HAMBÚRGUER ATIVA) */
+@media (max-width: 768px) {
+    /* Navegação */
+    nav {
+        justify-content: flex-end; /* Alinha o hambúrguer à direita */
+        padding: 10px 20px; /* Padding para o botão hambúrguer */
+        flex-wrap: nowrap; /* Impede que o conteúdo da nav quebre linha */
+    }
+
+    nav .nav-links {
+        display: none; /* Esconde os links por padrão */
+        flex-direction: column; /* Links empilhados no menu aberto */
+        background-color: #EBF3FF; /* Fundo do menu aberto */
+        position: absolute;
+        top: 100%; /* Posiciona o menu abaixo da nav principal */
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        border-top: 1px solid #0033A0;
+        /* Estilos de animação */
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    /* Quando a nav tem a classe 'active' (do JS) */
+    nav.active .nav-links {
+        display: flex; /* Mostra o menu */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav .nav-links a {
+        text-align: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(0, 51, 160, 0.1);
+        width: 100%;
+        box-sizing: border-box; /* Garante que o padding não adicione largura extra */
+    }
+
+    nav .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Botão Hambúrguer */
+    nav .hamburger {
+        display: block; /* Mostra o botão hambúrguer */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001; /* Garante que fique acima do menu */
+        position: relative; /* Ajusta o posicionamento em relação à nav */
+        outline: none; /* Remove o contorno ao clicar */
+    }
+
+    nav .hamburger .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #0033A0; /* Cor da barra do hambúrguer (azul SAMU) */
+        margin: 6px 0;
+        transition: 0.4s;
+        border-radius: 2px;
+    }
+
+    /* Animação do hambúrguer para virar um "X" */
+    nav .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(-45deg);
+    }
+    nav .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    nav .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(45deg);
+    }
+
+    /* Ajustes gerais de layout para mobile */
+    header h1 {
+        font-size: 2em;
+    }
+    .header-content img {
+        max-height: 60px;
+    }
+    header p {
+        font-size: 0.85em;
+    }
+    section h2 {
+        font-size: 1.8em;
+    }
+    section h3 {
+        font-size: 1.3em;
+    }
+    section p, ul li {
+        font-size: 0.9em;
+    }
+    .hero-section {
+        padding: 40px 15px;
+    }
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    .cta-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+        max-width: 80%; /* Limita a largura do botão */
+    }
+    .map-frame {
+        height: 250px; /* Reduz altura do mapa */
+    }
+    .testimonial-box {
+        padding: 20px;
+    }
+    .testimonial-box p {
+        font-size: 0.9em;
+    }
+    .sub-heading {
+        font-size: 1.5em;
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones verticais menores) */
+@media (max-width: 480px) { /* Mudei para 480px para capturar celulares menores */
+    header h1 {
+        font-size: 1.6em;
+    }
+    .header-content img {
+        max-height: 50px;
+    }
+    nav .hamburger {
+        padding: 8px; /* Menor padding para o botão */
+    }
+    nav .hamburger .bar {
+        width: 25px; /* Barras do hambúrguer um pouco menores */
+        height: 2px;
+        margin: 5px 0;
+    }
+    nav .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(-45deg); /* Ajusta animação do X */
+    }
+    nav .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(45deg);
+    }
+    section {
+        padding: 20px 15px; /* Mais redução de padding */
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    section h3 {
+        font-size: 1.2em;
+    }
+    section p, ul li {
+        font-size: 0.85em;
+    }
+    .hero-section {
+        padding: 30px 10px;
+    }
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 0.85em;
+    }
+    .cta-button {
+        font-size: 0.85em;
+        padding: 8px 15px;
+    }
+    .galeria img {
+        height: 120px; /* Altura menor para imagens da galeria */
+    }
+    .map-frame {
+        height: 200px;
+    }
+    .testimonial-box p {
+        font-size: 0.85em;
+    }
+    .sub-heading {
+        font-size: 1.4em;
+    }
+}
